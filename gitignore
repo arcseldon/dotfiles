@@ -1,0 +1,9 @@
+*.swp
+bin
+.metadata
+*~
+target/
+.DS_Store
+*.min.js
+*.min.css
+.idea

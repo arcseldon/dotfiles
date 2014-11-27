@@ -1,0 +1,48 @@
+[user]
+	name = arcseldon 
+	email = arcseldon@gmail.com
+[branch]
+	autosetuprebase = always
+[push]
+	default = matching
+[color]
+	status = auto
+	branch = auto
+	ui = auto
+[core]
+	excludesfile = /Users/arcseldon/.gitignore
+	editor = vim
+	autocrlf = false
+	safecrlf = false
+[alias]
+	histall = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --all 
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short 
+    hist1 = log --all --pretty=format:'%h %cd %s (%an)' --since='1 day ago'
+    hist7 = log --all --pretty=format:'%h %cd %s (%an)' --since='7 days ago'
+    showfiles = show --pretty="format:" --name-only 
+    showrefs = for-each-ref --format='%(refname:short) <- %(upstream:short)' refs/heads
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    type = cat-file -t
+    dump = cat-file -p
+    taginfo = show-ref --tags
+[difftool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[difftool]
+    prompt = false
+[diff]
+    tool = kdiff3
+[mergetool "kdiff3"]
+    path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
+    trustExitCode = false
+[mergetool]
+    keepBackup = false
+[merge]
+    tool = kdiff3
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
